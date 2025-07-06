@@ -1,36 +1,21 @@
 import React from 'react';
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
-import logo from '../images/newlogo.jpg';
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import logo from '../images/logoNew.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-[#FFA500] to-[#FFCC80] p-8 text-gray-800">
+    <footer className="bg-gradient-to-b from-[#FFA500] to-[#f5a124] p-8 text-gray-800">
       {/* Top Section */}
       <h2 className="text-lg font-semibold text-center mb-4">अधिक जानकारी के लिए सम्पर्क करें</h2>
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-around">
         
         {/* Logo Section */}
         <div className="w-full md:w-1/4 mb-4 flex items-center justify-center">
-          <img src={logo} alt="Logo" className="h-24 rounded-full shadow-lg transition-transform transform hover:scale-105" />
-        </div>
-
-        {/* Contact Information Section */}
-        <div className="flex flex-col items-center md:items-start mb-4 text-center md:text-left">
-          <p className="text-sm mb-2">
-            G20<br />
-            जन शिक्षण संस्थान, बीकानेर<br />
-            प्रौढ़ शिक्षा भवन, सरस्वती पार्क के पास, पुरानी गिन्नाणी, बीकानेर (राजस्थान) 334001<br />
-            दूरभाष - 0151-2970778, ई-मेल : 
-            <a href="mailto:jssbikaner@gmail.com" className="text-blue-600 underline"> jssbikaner@gmail.com</a><br />
-            facebook: Jan Shikshan Sansthan Bikaner / twitter-X: @Bikanerjan/<br />
-            instagram: bikanerjss / website: 
-            <a href="https://www.jssbikaner.com" className="text-blue-600 underline"> www.jssbikaner.com</a><br />
-            मुद्रक : सांखला प्रिंटर्स, बीकानेर
-          </p>
+          <img src={logo} alt="Logo" className="h-36 p-1 rounded-full transition-transform transform hover:scale-105" />
         </div>
 
         {/* Contact Info Section */}
-        <div className="w-full md:w-1/4 flex flex-col items-center md:items-start">
+        <div className="w-full md:w-1/3 flex flex-col items-center md:items-start">
           
           {/* Address */}
           <div className="flex items-start mb-4 text-center md:text-left">
@@ -39,7 +24,7 @@ const Footer = () => {
               <p className="font-semibold">निदेशक, जन शिक्षण संस्थान, बीकानेर</p>
               <p>प्रौढ़ शिक्षा भवन,</p>
               <p>सरस्वती पार्क के पास,</p>
-              <p>पुरानी गिन्नाणी, बीकानेर (राज.)</p>
+              <p>पुरानी गिन्नाणी, बीकानेर (राज.) (334001)</p>
             </div>
           </div>
 
@@ -57,11 +42,30 @@ const Footer = () => {
             </p>
           </div>
         </div>
+
+        {/* Social Media Section */}
+        <div className="w-full md:w-1/4 flex flex-col items-center md:items-start mt-4 md:mt-0">
+          <h3 className="text-lg font-semibold mb-4 text-center md:text-left">हमसे जुड़ें</h3>
+          <div className="flex flex-col space-y-3">
+            <a href="https://www.facebook.com/JanShikshanSansthanBikaner" target="_blank" rel="noopener noreferrer" className="flex items-center text-md hover:text-orange-600 transition duration-300 ease-in-out">
+              <FaFacebookF className="mr-3 text-xl text-blue-600" />
+              <span>Jan Shikshan Sansthan Bikaner</span>
+            </a>
+            <a href="https://twitter.com/Bikanerjan" target="_blank" rel="noopener noreferrer" className="flex items-center text-md hover:text-orange-600 transition duration-300 ease-in-out">
+              <FaTwitter className="mr-3 text-xl text-blue-400" />
+              <span>@Bikanerjan</span>
+            </a>
+            <a href="https://www.instagram.com/jssbikaner" target="_blank" rel="noopener noreferrer" className="flex items-center text-md hover:text-orange-600 transition duration-300 ease-in-out">
+              <FaInstagram className="mr-3 text-xl text-pink-500" />
+              <span>jssbikaner</span>
+            </a>
+          </div>
+        </div>
       </div>
       
       {/* Bottom Section */}
       <div className="mt-6 text-center">
-        <p className="text-sm text-gray-600">© {new Date().getFullYear()} Your Organization Name. All rights reserved.</p>
+        <p className="text-sm text-gray-600">© {new Date().getFullYear()} Jan Shikshan Sansthan, Bikaner. All rights reserved.</p>
       </div>
     </footer>
   );
