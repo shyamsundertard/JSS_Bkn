@@ -1,12 +1,12 @@
 import React from 'react';
-import Card from './Card';
+// import Card from './Card';
 import Anim from './Anim';
 import img1 from '../images/2024-09-22 (1).png'
 function HeroSection() {
   return (
     <>
       <div className='flex flex-col items-center justify-center m-4 sm:m-6 md:m-8 lg:m-10'>
-        <img src={img1} className='mb-8 md:h-40 md:w-90'/>
+        <img src={img1} alt="जन शिक्षण संस्थान, बीकानेर" className='mb-8 md:h-40 md:w-90'/>
         <h1 className='text-red-500 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wide mb-3 sm:mb-4'>
           जन शिक्षण संस्थान, बीकानेर
         </h1>

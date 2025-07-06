@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IoIosSearch, IoIosClose } from "react-icons/io";
 import { RxDropdownMenu } from "react-icons/rx";
@@ -8,11 +8,9 @@ import img1 from '../images/jss_navlogo-removebg-preview.png';
 const Header = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const [timer, setTimer] = useState(null);
 
   const handleSearchClick = () => {
     setShowSearch(true);
-    clearTimeout(timer);
   };
 
   const handleCloseClick = () => {
@@ -23,26 +21,8 @@ const Header = () => {
     setShowMenu(prev => !prev);
   };
 
-  const handleMouseEnter = () => {
-    clearTimeout(timer);
-  };
-
-  const handleMouseLeave = () => {
-    if (showSearch) {
-      setTimer(setTimeout(() => {
-        setShowSearch(false);
-      }, 500));
-    }
-  };
-
-  useEffect(() => {
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [timer]);
-
   return (
-    <header className="bg-gradient-to-r from-[#FFA500] to-[#FFCC80] w-full">
+    <header className="bg-gradient-to-b from-[#FFA500] to-[#f5a124] w-full">
       <div className="flex items-center justify-between p-2">
         <div className="flex items-center">
           <img src={img1} alt="Logo 1" className="h-8 md:h-10 mx-2" />
@@ -83,7 +63,6 @@ const Header = () => {
               type="text"
               placeholder="Type to search..."
               className="p-1 md:m-0 m-2  border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 w-full mr-2 rounded-md"
-              onFocus={handleMouseEnter}
             />
             <div className="text-gray-700 hover:text-blue-500 cursor-pointer p-1 md:pt-0 pt-2" onClick={handleCloseClick}>
               <IoIosClose size={24} />
@@ -91,7 +70,7 @@ const Header = () => {
           </div>
         ) : (
           <nav className=" md:flex flex-grow justify-center space-x-5 mb-4 md:mb-0 ">
-            <div className='hidden md:flex md:flex flex-grow justify-center space-x-5 mb-4 md:mb-0 md:mt-2'>
+            <div className='hidden md:flex flex-grow justify-center space-x-5 mb-4 md:mb-0 md:mt-2'>
             <Link to="/" className="text-sm text-gray-700 font-semibold hover:text-white transition duration-300 ease-in-out">मुख पृष्ठ</Link>
             <Link to="/introduction" className="text-sm text-gray-700 font-semibold hover:text-white transition duration-300 ease-in-out">परिचय</Link>
             <Link to="/board" className="text-sm text-gray-700 font-semibold hover:text-white transition duration-300 ease-in-out">प्रबंध मंडल</Link>
