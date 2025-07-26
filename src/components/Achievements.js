@@ -1,16 +1,13 @@
-import React from 'react';
 import { FaCaretRight } from 'react-icons/fa';
 
 const Achievements = () => {
   return (
     <div className="p-6 md:p-12 max-w-4xl mx-auto">
-      {/* Title Section */}
-      <h1 className="text-2xl md:text-4xl font-bold text-center mb-6  text-red-500">
+      <h1 className="text-2xl md:text-4xl font-bold text-center mb-6  text-tertiary">
         उल्लेखनीय कार्य एवं उपलब्धियाँ
       </h1>
 
-      {/* Achievements List */}
-      <div className="text-gray-800 space-y-6">
+      <div className="text-tertiary space-y-6">
         {[
           {
             title: "प्रधानमंत्री श्री नरेन्द्र मोदी की बीकानेर यात्रा में सक्रिय सहभागिता : ",
@@ -86,16 +83,10 @@ const Achievements = () => {
           }
         ].map((achievement, index) => (
           <p key={index}>
-            <FaCaretRight className="inline text-red-500" />
-            <strong className="text-red-500">{achievement.title}</strong> {achievement.content}
+            <FaCaretRight className="inline text-tertiary" />
+            <strong className="text-tertiary">{achievement.title}</strong> {achievement.content}
           </p>
         ))}
-
-        <div className="text-center mt-8">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Share this post
-          </button>
-        </div>
       </div>
     </div>
   );

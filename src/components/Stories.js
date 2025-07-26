@@ -1,19 +1,17 @@
-import React from 'react';
-
 export default function Stories() {
   return (
-    <div className='flex flex-col items-center justify-center w-full h-screen bg-gradient-to-r from-purple-500 to-blue-500'>
-      <div className='bg-white shadow-lg rounded-lg p-8 text-center'>
-        <h1 className='text-5xl font-bold text-gray-800 mb-4'>Our Stories</h1>
-        <p className='text-xl text-gray-600 mb-6'>
-          Inspiring narratives that connect us all.
+    <div className='flex flex-col items-center justify-center w-full h-screen text-tertiary'>
+      <div className='bg-primary-light shadow-lg rounded-lg p-8 text-center'>
+        <h1 className='text-5xl font-bold mb-4'>हमारी कहानियाँ</h1>
+        <p className='text-xl mb-6'>
+          प्रेरणादायक कथाएँ जो हम सभी को जोड़ती हैं।
         </p>
-        <p className='text-lg text-gray-500 mb-8'>
-          Dive into our collection of stories that celebrate experiences and achievements.
+        <p className='text-lg'>
+          उन कहानियों के संग्रह में गोताखोरी करें जो अनुभवों और उपलब्धियों का जश्न मनाती हैं।
         </p>
-        <button className='mt-4 bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600'>
-          Read More
-        </button>
+        {/* <button className='mt-4 bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600'>
+          और पढ़ें
+        </button> */}
       </div>
     </div>
   );

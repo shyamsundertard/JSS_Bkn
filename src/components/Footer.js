@@ -4,20 +4,16 @@ import logo from '../images/logoNew.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-[#FFA500] to-[#f5a124] p-8 text-gray-800">
-      {/* Top Section */}
+    <footer className="bg-primary pt-6 pb-2 text-tertiary">
       <h2 className="text-lg font-semibold text-center mb-4">अधिक जानकारी के लिए सम्पर्क करें</h2>
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-around">
         
-        {/* Logo Section */}
         <div className="w-full md:w-1/4 mb-4 flex items-center justify-center">
           <img src={logo} alt="Logo" className="h-36 p-1 rounded-full transition-transform transform hover:scale-105" />
         </div>
 
-        {/* Contact Info Section */}
         <div className="w-full md:w-1/3 flex flex-col items-center md:items-start">
           
-          {/* Address */}
           <div className="flex items-start mb-4 text-center md:text-left">
             <FaMapMarkerAlt className="mr-2 text-xl text-orange-600" />
             <div className='text-md'>
@@ -28,13 +24,11 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Phone Number */}
           <div className="flex items-center mb-4 text-center md:text-left">
             <FaPhoneAlt className="mr-2 text-xl text-orange-600" />
             <p className="text-md">+91 151 2970778</p>
           </div>
 
-          {/* Email */}
           <div className="flex items-center text-center md:text-left">
             <FaEnvelope className="mr-2 text-xl text-orange-600" />
             <p className="text-md">
@@ -43,7 +37,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Social Media Section */}
         <div className="w-full md:w-1/4 flex flex-col items-center md:items-start mt-4 md:mt-0">
           <h3 className="text-lg font-semibold mb-4 text-center md:text-left">हमसे जुड़ें</h3>
           <div className="flex flex-col space-y-3">
@@ -63,9 +56,8 @@ const Footer = () => {
         </div>
       </div>
       
-      {/* Bottom Section */}
       <div className="mt-6 text-center">
-        <p className="text-sm text-gray-600">© {new Date().getFullYear()} Jan Shikshan Sansthan, Bikaner. All rights reserved.</p>
+        <p className="text-sm text-tertiary">© {new Date().getFullYear()} Jan Shikshan Sansthan, Bikaner. All rights reserved.</p>
       </div>
     </footer>
   );

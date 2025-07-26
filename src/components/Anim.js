@@ -132,8 +132,8 @@ function Anim() {
                   />
                 ))}
                 {images.slice(groupIndex * 2, groupIndex * 2 + 2).length === 1 && (
-                  <div className="w-1/2 h-full bg-gray-200 flex items-center justify-center rounded-lg">
-                    <span className="text-gray-500">No more images</span>
+                  <div className="w-1/2 h-full bg-muted flex items-center justify-center rounded-lg">
+                    <span className="text-tertiary">No more images</span>
                   </div>
                 )}
               </div>
@@ -143,7 +143,7 @@ function Anim() {
 
         <button 
           onClick={prevImage}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition-all duration-300"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-tertiary bg-opacity-50 text-surface p-3 rounded-full hover:bg-opacity-75 transition-all duration-300"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -152,7 +152,7 @@ function Anim() {
 
         <button 
           onClick={nextImage}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition-all duration-300"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-tertiary bg-opacity-50 text-surface p-3 rounded-full hover:bg-opacity-75 transition-all duration-300"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -178,8 +178,8 @@ function Anim() {
               onClick={() => goToImage(index)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 isActive
-                  ? 'bg-orange-500 scale-125' 
-                  : 'bg-gray-300 hover:bg-gray-400'
+                  ? 'bg-primary-light border-[.5px] border-tertiary scale-125' 
+                  : 'bg-muted hover:border-[.5px] hover:border-tertiary'
               }`}
             />
           );
@@ -187,7 +187,7 @@ function Anim() {
       </div>
 
       <div className="text-center mt-4">
-        <span className="text-gray-600 text-sm">
+        <span className="text-tertiary text-sm">
           {isMobile ? (
             `${currentIndex + 1} / ${images.length}`
           ) : (
