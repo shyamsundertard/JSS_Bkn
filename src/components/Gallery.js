@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import img1 from '../images/img1.jpg';
 import img2 from '../images/img2.jpg';
 import img3 from '../images/img3.jpg';
@@ -92,48 +92,44 @@ const Gallery = () => {
 
   return (
     <div className="p-5">
-      <h2 className="text-2xl font-semibold text-center mb-8 text-red-500">गैलरी फोटो एक नजर</h2>
+      <h2 className="text-3xl font-bold text-center mb-8 text-tertiary">फोटो गैलरी</h2>
       
-      {/* Images Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 mb-8">
         {currentImages.map((img, index) => (
-          <div key={startIndex + index} className="overflow-hidden rounded-lg shadow-lg">
+          <div key={startIndex + index} className="break-inside-avoid mb-4 overflow-hidden rounded-md shadow-lg bg-surface transition-transform duration-100 hover:scale-105 cursor-pointer">
             <img
               src={img}
               alt={`Gallery item ${startIndex + index + 1}`}
-              className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
+              className="w-full h-auto object-cover"
             />
           </div>
         ))}
       </div>
 
-      {/* Pagination Controls */}
       <div className="flex flex-col items-center space-y-4">
 
-        {/* Navigation Buttons */}
         <div className="flex items-center space-x-4">
           <button
             onClick={prevPage}
             disabled={currentPage === 0}
             className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
               currentPage === 0
-                ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                : 'bg-orange-500 text-white hover:bg-orange-600 transform hover:scale-105'
+                ? 'bg-muted text-tertiary cursor-not-allowed'
+                : 'bg-surface border border-tertiary text-tertiary hover:bg-primary-light transform hover:scale-105'
             }`}
           >
             ← Previous
           </button>
 
-          {/* Page Numbers */}
           <div className="flex space-x-2">
             {Array.from({ length: totalPages }, (_, index) => (
               <button
                 key={index}
                 onClick={() => goToPage(index)}
-                className={`w-10 h-10 rounded-lg font-medium transition-all duration-300 ${
+                className={`w-10 h-10 rounded-lg font-medium transition-all duration-100 ${
                   index === currentPage
-                    ? 'bg-orange-500 text-white scale-110'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? 'bg-primary-light border border-tertiary text-tertiary scale-110'
+                    : 'bg-surface text-gray-700 hover:border hover:border-tertiary'
                 }`}
               >
                 {index + 1}
@@ -144,10 +140,10 @@ const Gallery = () => {
           <button
             onClick={nextPage}
             disabled={currentPage === totalPages - 1}
-            className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-4 py-2 rounded-lg font-medium transition-all duration-100 ${
               currentPage === totalPages - 1
-                ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                : 'bg-orange-500 text-white hover:bg-orange-600 transform hover:scale-105'
+                ? 'bg-muted text-tertiary cursor-not-allowed'
+                : 'bg-surface border border-tertiary text-tertiary hover:bg-primary-light transform hover:scale-105'
             }`}
           >
             Next →
