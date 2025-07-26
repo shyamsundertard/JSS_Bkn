@@ -7,6 +7,7 @@ import Board from './components/Board';
 import Introduction from './components/Introduction';
 import Achievements from './components/Achievements';
 import AnnualPlan from './components/AnnualPlan';
+import Contact from './components/Contact';
 import './App.css';
 import Product from './components/Product';
 import Educommittee from './components/Educommittee';
@@ -23,11 +24,10 @@ export default function App() {
         <Route path="/introduction" element={<Introduction />} />
         <Route path="/achievements" element={<Achievements />} />
         <Route path="/annual-plan" element={<AnnualPlan />} />
-        {/* <Route path="/contact" element={<Contact/>} /> */}
-        <Route path="/product" element={<Product/>} />
-        <Route path="/educommittee" element={<Educommittee/>} />
-        <Route path="/stories" element={<Stories/>} />
-
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/educommittee" element={<Educommittee />} />
+        <Route path="/stories" element={<Stories />} />
       </Routes>
       <Footer />
     </Router>
