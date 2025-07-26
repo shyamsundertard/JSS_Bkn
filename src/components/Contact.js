@@ -1,51 +1,220 @@
-import React from 'react';
-import './Contact.css';
+import { useState, useRef } from 'react';
 
 const Contact = () => {
-  return (
-    <div className="contact-page">
-      <div className="contact-details">
-        <h1>Contact Us</h1>
-        <p>Our Technical Support Team is always willing to lend a hand. Each and every customer is a valuable asset to Jan Shikshan Sansthan. We value your privacy and are here to handle all your difficulties or doubts related to sales, support, and general queries related to our products.</p>
+  const [message, setMessage] = useState('');
+  const [activeTooltip, setActiveTooltip] = useState(null);
+  const showTimeoutRef = useRef(null);
+  const hideTimeoutRef = useRef(null);
+  const maxLength = 10000;
+
+  const handleMessageChange = (e) => {
+    const value = e.target.value;
+    if (value.length <= maxLength) {
+      setMessage(value);
+    }
+  };
+
+  const showTooltip = (tooltipId) => {
+    if (showTimeoutRef.current) {
+      clearTimeout(showTimeoutRef.current);
+    }
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current);
+    }
+
+    showTimeoutRef.current = setTimeout(() => {
+      setActiveTooltip(tooltipId);
+      
+      hideTimeoutRef.current = setTimeout(() => {
+        setActiveTooltip(null);
+      }, 3000);
+    }, 1000);
+  };
+
+  const hideTooltip = () => {
+    if (showTimeoutRef.current) {
+      clearTimeout(showTimeoutRef.current);
+    }
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current);
+    }
+    
+    setActiveTooltip(null);
+  };
+
+  const CustomTooltip = ({ id, content, children }) => (
+    <div className="relative inline-block w-full">
+      <div
+        onMouseEnter={() => showTooltip(id)}
+        onMouseLeave={hideTooltip}
+      >
+        {children}
       </div>
+      {activeTooltip === id && (
+        <div className="absolute bottom-full left-1/2 mb-2 z-50 animate-fadeIn" style={{ transform: 'translate(-50%, 0)' }}>
+          <div className="bg-tertiary text-surface text-sm rounded-lg px-3 py-2 shadow-lg border border-primary max-w-xs whitespace-normal">
+            {content}
+            <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-tertiary"></div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 
-      <div className="contact-cards">
-        <div className="contact-card contact-form-card">
-          <h2>Contact Form</h2>
-          <form>
-            <label htmlFor="name">Name *</label>
-            <input type="text" id="name" name="name" required />
-
-            <label htmlFor="email">Email *</label>
-            <input type="email" id="email" name="email" required />
-
-            <label htmlFor="mobile">Mobile *</label>
-            <input type="tel" id="mobile" name="mobile" required />
-
-            <label htmlFor="message">Your Message *</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
-            <button type="submit">Send Message</button>
-          </form>
+  return (
+    <>
+      <style>
+        {`
+          @keyframes tooltipFadeIn {
+            from {
+              opacity: 0;
+              transform: translate(-50%, -10px);
+              visibility: hidden;
+            }
+            to {
+              opacity: 1;
+              transform: translate(-50%, 0);
+              visibility: visible;
+            }
+          }
+          .animate-fadeIn {
+            animation: tooltipFadeIn 0.3s ease-out forwards;
+            transform: translate(-50%, 0);
+            opacity: 0;
+            visibility: hidden;
+          }
+          input[title], textarea[title], *[title] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+          }
+          input::-webkit-tooltip, textarea::-webkit-tooltip {
+            display: none;
+          }
+        `}
+      </style>
+      <div className="p-5">
+        <div className="text-center mb-10">
+          <h1 className="mb-2.5 text-3xl font-bold text-tertiary">हमसे संपर्क करें</h1>
+          <p className="text-base text-tertiary max-w-4xl mx-auto">
+            हमारी तकनीकी सहायता टीम हमेशा मदद के लिए तैयार है। जन शिक्षण संस्थान के लिए प्रत्येक ग्राहक एक मूल्यवान संपत्ति है। हम आपकी निजता का सम्मान करते हैं और बिक्री, सहायता और हमारे उत्पादों से संबंधित सामान्य प्रश्नों से जुड़ी आपकी सभी कठिनाइयों या संदेहों को हल करने के लिए यहाँ हैं।
+          </p>
         </div>
 
-        <div className="contact-card map-card">
-          <h2>Contact Information</h2>
-          <iframe
-             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1840291.7327990606!2d73.07137180962703!3d28.02250096973033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396d61c628d1a55f%3A0x1d024549baf3e0d6!2sBikaner%2C%20Rajasthan%2C%20India!5e0!3m2!1sen!2sin!4v1634192648952!5m2!1sen!2sin"
-            allowFullScreen
-            loading="lazy"
-            title="Google Map"
-          ></iframe>
-          <div className="contact-info">
-            <p><strong>Jan Shikshan Sansthan Bikaner</strong></p>
-            <p>Bikaner</p>
-            <p><strong>Phone:</strong> +91 xx</p>
-            <p><strong>Email:</strong> jssbikaner@gmail.com</p>
+        <div className="flex flex-wrap gap-5 justify-center md:flex-row flex-col items-center">
+          <div className="bg-primary-light border-2 border-tertiary rounded-lg shadow-lg p-5 w-full max-w-2xl">
+            <h2 className="mb-5 text-2xl font-semibold text-tertiary-dark text-center">संपर्क फॉर्म</h2>
+            <form className="flex flex-col gap-4">
+              <label htmlFor="name" className="font-medium text-tertiary">नाम *</label>
+              <CustomTooltip 
+                id="name" 
+                content="कृपया अपना पूरा नाम यहाँ दर्ज करें"
+              >
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required 
+                  className="p-2.5 border border-tertiary bg-background rounded focus:outline-none focus:ring-1 focus:ring-tertiary w-full"
+                  placeholder='अपना नाम लिखें...'
+                  title=""
+                  data-tooltip-disabled="true"
+                />
+              </CustomTooltip>
+
+              <label htmlFor="email" className="font-medium text-tertiary">ईमेल *</label>
+              <CustomTooltip 
+                id="email" 
+                content="एक वैध ईमेल पता दर्ज करें (उदाहरण: user@example.com)"
+              >
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  className="p-2.5 border border-tertiary bg-background rounded focus:outline-none focus:ring-1 focus:ring-tertiary w-full"
+                  placeholder='अपना ईमेल लिखें...'
+                  title=""
+                  data-tooltip-disabled="true"
+                />
+              </CustomTooltip>
+
+              <label htmlFor="mobile" className="font-medium text-tertiary">मोबाइल *</label>
+              <CustomTooltip 
+                id="mobile" 
+                content="10 अंकों का मोबाइल नंबर दर्ज करें (उदाहरण: 9876543210)"
+              >
+                <input 
+                  type="tel" 
+                  id="mobile" 
+                  name="mobile" 
+                  required 
+                  className="p-2.5 border border-tertiary bg-background rounded focus:outline-none focus:ring-1 focus:ring-tertiary w-full"
+                  placeholder='अपना मोबाइल नंबर लिखें...'
+                  title=""
+                  data-tooltip-disabled="true"
+                />
+              </CustomTooltip>
+
+              <label htmlFor="message" className="font-medium text-tertiary">आपका संदेश *</label>
+              <CustomTooltip 
+                id="message" 
+                content={`अपना विस्तृत संदेश यहाँ लिखें (अधिकतम ${maxLength} अक्षर)`}
+              >
+                <div className="relative">
+                  <textarea 
+                    id="message" 
+                    name="message" 
+                    rows="4" 
+                    required 
+                    value={message}
+                    onChange={handleMessageChange}
+                    maxLength={maxLength}
+                    className="p-2.5 border border-tertiary bg-background rounded focus:outline-none focus:ring-1 focus:ring-tertiary w-full min-h-[100px] max-h-[200px] resize-y overflow-y-auto"
+                    placeholder="अपना संदेश लिखें..."
+                    title=""
+                    data-tooltip-disabled="true"
+                    style={{ fieldSizing: 'content' }}
+                  ></textarea>
+                  <div className="text-right text-sm text-gray-600 mt-1">
+                    {message.length}/{maxLength} अक्षर
+                  </div>
+                </div>
+              </CustomTooltip>
+
+              <button 
+                type="submit" 
+                className="p-2.5 border-none rounded bg-primary text-tertiary text-base cursor-pointer hover:text-lg hover:p-2 transition-colors duration-300 font-extrabold"
+              >
+                संदेश भेजें
+              </button>
+            </form>
+          </div>
+
+          <div className="bg-primary-light border-2 border-tertiary rounded-lg shadow-lg p-5 w-full max-w-2xl">
+            <h2 className="mb-5 text-2xl font-semibold text-tertiary text-center">संपर्क जानकारी</h2>
+            <iframe
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1840291.7327990606!2d73.07137180962703!3d28.02250096973033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396d61c628d1a55f%3A0x1d024549baf3e0d6!2sBikaner%2C%20Rajasthan%2C%20India!5e0!3m2!1sen!2sin!4v1634192648952!5m2!1sen!2sin"
+              allowFullScreen
+              loading="lazy"
+              title="Google Map"
+              className="w-full h-72 border-0 rounded-lg"
+            ></iframe>
+            <div className="mt-5">
+              <p className="my-1.5">
+                <strong className="block font-bold text-tertiary">Jan Shikshan Sansthan, Bikaner</strong>
+              </p>
+              <p className="my-1.5 text-gray-700">
+                <strong className="font-bold text-tertiary">फोन:</strong> +91 151 2970778
+              </p>
+              <p className="my-1.5 text-gray-700">
+                <strong className="font-bold text-tertiary">ईमेल:</strong> jssbikaner@gmail.com
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
