@@ -24,7 +24,7 @@ const Introduction = () => {
         </div>
 
         {/* मुख्य उद्देश्य Card */}
-        <div className="bg-primary-light shadow-lg rounded-lg p-4 border-l-4 border-primary">
+        <div className="bg-primary-light shadow-lg rounded-lg p-4 border-l-4 border-b-4 border-primary">
           <h2 className="text-xl font-semibold mb-2">मुख्य उद्देश्य:</h2>
           <p className="mb-4 tracking-wider">
             जिले की शहरी कच्ची बस्तियों एवं ग्रामीण क्षेत्रों के निरक्षर, नवसाक्षर, अल्पशिक्षित, स्कूली ड्रॉप-आउट, सामाजिक आर्थिक दृष्टि से पिछड़े तथा वंचित वर्ग के बेरोजगार महिला-पुरुषों को स्थानीय बाजार की माँग के अनुसार व्यावसायिक कौशल प्रशिक्षणों में दक्ष कर उनको सामाजिक एवं आर्थिक रूप से स्वावलंबी बनाना और जीवन कौशल शिक्षा के माध्यम से व्यक्तित्व विकास, सामाजिक विकास एवं राष्ट्रीय सरोकार की कार्य-गतिविधियों का नियमित संचालन करना।
@@ -32,7 +32,7 @@ const Introduction = () => {
         </div>
 
         {/* लक्ष्य समूह Card */}
-        <div className="bg-primary-light shadow-lg rounded-lg p-4 border-l-4 border-primary">
+        <div className="bg-primary-light shadow-lg rounded-lg p-4 border-l-4 border-b-4 border-primary">
           <h2 className="text-xl font-semibold mb-2">लक्ष्य समूह:</h2>
           <p className="mb-4 tracking-wider">
             बीकानेर जिले के निरक्षर, नवसाक्षर, अल्पशिक्षित, स्कूली ड्रॉप आउट तथा सामाजिक एवं आर्थिक रूप से पिछड़े एवं वंचित वर्ग के 15-45 आयुवर्ग के महिला-पुरुष।
@@ -40,7 +40,7 @@ const Introduction = () => {
         </div>
 
         {/* निःशुल्क प्रशिक्षण Card */}
-        <div className="bg-primary-light shadow-lg rounded-lg p-4 border-l-4 border-primary">
+        <div className="bg-primary-light shadow-lg rounded-lg p-4 border-l-4 border-b-4 border-primary">
           <h2 className="text-xl font-semibold mb-2">निःशुल्क प्रशिक्षण</h2>
           <p className="mb-4 tracking-wider">
             संस्थान द्वारा अनुसूचित जाति एवं अनुसूचित जनजाति (SC/ST) वर्ग, बीपीएल (BPL) एवं दिव्यांग श्रेणी के व्यक्तियों को निःशुल्क प्रशिक्षण दिया जाता है।
