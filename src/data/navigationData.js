@@ -1,7 +1,7 @@
 export const navigationItems = [
   {
     path: "/",
-    label: "मुख पृष्ठ",
+    label: "मुख्य पृष्ठ",
     icon: "🏠"
   },
   {
@@ -31,7 +31,7 @@ export const navigationItems = [
   },
   {
     path: "/product",
-    label: "तयार उत्पाद",
+    label: "तैयार उत्पाद",
     icon: "📦"
   },
   {
@@ -41,7 +41,7 @@ export const navigationItems = [
   },
   {
     path: "/stories",
-    label: "सफलता की कहानी",
+    label: "सफलता की कहानियाँ",
     icon: "⭐"
   },
   {

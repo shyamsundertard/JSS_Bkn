@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { RxDropdownMenu } from "react-icons/rx";
-import img2 from '../images/bharat_sarkar_logo-removebg-preview.png';
-import img1 from '../images/jss_navlogo-removebg-preview.png';
+import img2 from '../images/bharat_sarkar_logo.png';
+import img1 from '../images/logo-collage.png';
 import NavLink from './NavLink';
 import NavSeparator from './NavSeparator';
 import { SearchBar, SearchIcon } from './SearchComponents';

@@ -94,6 +94,7 @@ const Contact = () => {
         `}
       </style>
       <div className="p-5">
+        <div className="overflow-x-auto rounded-sm max-w-[80%] mx-auto">
         <div className="text-center mb-10">
           <h1 className="mb-2.5 text-3xl font-bold text-tertiary">हमसे संपर्क करें</h1>
           <p className="text-base text-tertiary max-w-4xl mx-auto">
@@ -101,7 +102,37 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-5 justify-center md:flex-row flex-col items-center">
+          <table className="table-auto border border-primary bg-primary-light w-full text-sm md:text-base">
+            <thead className="bg-primary-dark text-background">
+              <tr>
+                <th className="border border-primary px-2 py-2">क्र.</th>
+                <th className="border border-primary px-2 py-2">नाम</th>
+                <th className="border border-primary px-2 py-2">पद</th>
+                <th className="border border-primary px-2 py-2">संपर्क नं.</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["श्री ओम प्रकाश सुथार", "निदेशक", "9660286578"],
+                ["श्री महेश उपाध्याय", "कार्यक्रम अधिकारी", "9829048316"],
+                ["श्री लक्ष्मी नारायण चूरा", "लेखाकार", "9929182526"],
+                ["श्री तलत रियाज", "सहायक कार्यक्रम अधिकारी", "9214083468"],
+                ["श्री उमाशंकर आचार्य", "सहायक कार्यक्रम अधिकारी", "9413481466"],
+                ["श्री विष्णु दत्त मारू", "वाहन चालक", "9799961613"],
+                ["श्री श्रीमोहन आचार्य", "सहायक", "7737128804"],
+              ].map(([name, position, contact], i) => (
+                <tr key={i}>
+                  <td className="border border-primary px-2 py-1 text-center font-semibold">{i + 1}</td>
+                  <td className="border border-primary px-2 py-1 font-semibold">{name}</td>
+                  <td className="border border-primary px-2 py-1 text-center">{position}</td>
+                  <td className="border border-primary px-2 py-1 text-center">{contact}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="flex flex-wrap gap-5 justify-center md:flex-row flex-col items-center pt-8">
           <div className="bg-primary-light border-2 border-tertiary rounded-lg shadow-lg p-5 w-full max-w-2xl">
             <h2 className="mb-5 text-2xl font-semibold text-tertiary-dark text-center">संपर्क फॉर्म</h2>
             <form className="flex flex-col gap-4">

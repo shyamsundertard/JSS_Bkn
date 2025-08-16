@@ -14,7 +14,7 @@ import img12 from '../images/img12.jpg';
 import img13 from '../images/img13.jpg';
 import img14 from '../images/img14.jpg';
 import img15 from '../images/img15.jpg';
-import img16 from '../images/img16.jpg';
+import img16 from '../images/img16.jpeg';
 import img17 from '../images/img17.jpeg';
 import img18 from '../images/img18.jpeg'; 
 import img19 from '../images/img19.jpeg';
@@ -51,7 +51,6 @@ import img49 from '../images/img49.jpeg';
 import img50 from '../images/img50.jpeg';
 import img51 from '../images/img51.jpeg';
 import img52 from '../images/img52.jpeg';
-import img53 from '../images/img53.jpeg';
 
 const Gallery = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -66,7 +65,6 @@ const Gallery = () => {
     img35, img36, img37, img38, img39, img40,
     img41, img42, img43, img44, img45, img46,
     img47, img48, img49, img50, img51, img52,
-    img53
   ];
 
   const totalPages = Math.ceil(images.length / imagesPerPage);

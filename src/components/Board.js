@@ -1,4 +1,11 @@
-import React from 'react';
+import img1 from '../images/giriraj-mohata.png';
+import img2 from '../images/brajratan-joshi.png';
+import img3 from '../images/dipali-dhawan.png';
+import img4 from '../images/mahima-sankhla.png';
+import img5 from '../images/kamal-kalla.png';
+import img6 from '../images/mohini-devani.png';
+import img7 from '../images/bhagirath-kalwa.png';
+
 
 const Board = () => {
   return (
@@ -11,81 +18,123 @@ const Board = () => {
 
       <h3 className="text-xl font-semibold mb-4 text-tertiary">प्रबंध मंडल के गैर कार्यालयी सदस्य (NON OFFICIAL MEMBERS):-</h3>
       <table className="min-w-full border-collapse border border-primary table-fixed bg-primary-light">
+  <thead>
+    <tr className="bg-primary-dark text-background">
+      <th className="border border-primary text-center">क्र.</th>
+      <th className="border border-primary">प्रबंध मंडल के सदस्य महानुभाव</th>
+      <th className="border border-primary py-2">पद</th>
+      <th className="border border-primary py-2 text-center">फोटो</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-primary p-2 text-center text-tertiary">1</td>
+      <td className="border border-primary p-2 text-tertiary">
+        <span className="font-semibold">एडवोकेट श्री गिरिराज मोहता</span><br />
+        <span className="text-sm">राजस्थान हाई कोर्ट-बीकानेर</span>
+      </td>
+      <td className="border border-primary p-2 text-center text-tertiary font-semibold">चेयरमैन</td>
+      <td className="border border-primary p-2 text-center">
+        <img src={img1} alt="गिरिराज मोहता" className="w-16 h-16 object-cover rounded-2xl mx-auto" />
+      </td>
+    </tr>
+
+    <tr>
+      <td className="border border-primary p-2 text-center text-tertiary">2</td>
+      <td className="border border-primary p-2 text-tertiary">
+        <span className="font-semibold">डॉ. ब्रजरतन जोशी</span><br />
+        <span className="text-sm">सह-आचार्य, राजकीय श्रीडूंगर महाविद्यालय, बीकानेर</span>
+      </td>
+      <td className="border border-primary p-2 text-center text-tertiary font-semibold">वाईस चेयरमैन</td>
+      <td className="border border-primary p-2 text-center">
+        <img src={img2} alt="ब्रजरतन जोशी" className="w-16 h-16 object-cover rounded-2xl mx-auto" />
+      </td>
+    </tr>
+
+    <tr>
+      <td className="border border-primary p-2 text-center text-tertiary">3</td>
+      <td className="border border-primary p-2 text-tertiary">
+        <span className="font-semibold">डॉ. दीपाली धवन</span><br />
+        <span className="text-sm">डीन, पीजीएस, स्वामी केशवानंद कृषि विश्वविद्यालय, बीकानेर</span>
+      </td>
+      <td className="border border-primary p-2 text-center text-tertiary">
+        <h1 className="font-semibold">सदस्य</h1>
+        (कौशल विकास के क्षेत्र से)
+      </td>
+      <td className="border border-primary p-2 text-center">
+        <img src={img3} alt="दीपाली धवन" className="w-16 h-16 object-cover rounded-2xl mx-auto" />
+      </td>
+    </tr>
+
+    <tr>
+      <td className="border border-primary p-2 text-center text-tertiary">4</td>
+      <td className="border border-primary p-2 text-tertiary">
+        <span className="font-semibold">श्रीमती महिमा सांखला</span><br />
+        <span className="text-sm">महिला विकास एवं समाजसेविका, बीकानेर</span>
+      </td>
+      <td className="border border-primary p-2 text-center text-tertiary">
+        <h1 className="font-semibold">सदस्य</h1>
+        (महिला एवं सामाजिक विकास के क्षेत्र से)
+      </td>
+      <td className="border border-primary p-2 text-center">
+        <img src={img4} alt="महिमा सांखला" className="w-16 h-16 object-cover rounded-2xl mx-auto" />
+      </td>
+    </tr>
+
+    <tr>
+      <td className="border border-primary p-2 text-center text-tertiary">5</td>
+      <td className="border border-primary p-2 text-tertiary">
+        <span className="font-semibold">श्री कमल कल्ला</span><br />
+        <span className="text-sm">अध्यक्ष, राजस्थान वूलन इंडस्ट्रीज एसोसिएशन, बीकानेर</span>
+      </td>
+      <td className="border border-primary p-2 text-center text-tertiary">
+        <h1 className="font-semibold">सदस्य</h1>
+        (स्थानीय उद्योग/उद्यमी क्षेत्र से)
+      </td>
+      <td className="border border-primary p-2 text-center">
+        <img src={img5} alt="कमल कल्ला" className="w-16 h-16 object-cover rounded-2xl mx-auto" />
+      </td>
+    </tr>
+
+    <tr>
+      <td className="border border-primary p-2 text-center text-tertiary">6</td>
+      <td className="border border-primary p-2 text-tertiary">
+        <span className="font-semibold">श्रीमती मोहिनी देवाणी</span><br />
+        <span className="text-sm">प्रख्यात उद्यमी, बीकानेर</span>
+      </td>
+      <td className="border border-primary p-2 text-center text-tertiary">
+        <h1 className="font-semibold">सदस्य</h1>
+        (स्थानीय उद्योग/उद्यमी क्षेत्र से)
+      </td>
+      <td className="border border-primary p-2 text-center">
+        <img src={img6} alt="मोहिनी देवाणी" className="w-16 h-16 object-cover rounded-2xl mx-auto" />
+      </td>
+    </tr>
+
+    <tr>
+      <td className="border border-primary p-2 text-center text-tertiary">7</td>
+      <td className="border border-primary p-2 text-tertiary">
+        <span className="font-semibold">एडवोकेट भागीरथ राम कालवा</span><br />
+        <span className="text-sm">राजस्थान हाई कोर्ट, बीकानेर</span>
+      </td>
+      <td className="border border-primary p-2 text-center text-tertiary">
+        <h1 className="font-semibold">सदस्य</h1>
+        (अनुसूचित जाति एवं जनजाति क्षेत्र से)
+      </td>
+      <td className="border border-primary p-2 text-center">
+        <img src={img7} alt="भागीरथ राम कालवा" className="w-16 h-16 object-cover rounded-2xl mx-auto" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+      <table className="min-w-full border-collapse border border-gray-200 bg-primary-light mt-16">
         <thead>
           <tr className='bg-primary-dark text-background'>
             <th className="border border-primary text-center">क्र.</th>
-            <th className="border border-primary">प्रबंध मंडल के सदस्य महानुभाव</th>
-            <th className="border border-primary py-2">पद</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="border border-primary p-2 text-center text-tertiary">1</td>
-            <td className="border border-primary p-2 text-tertiary">
-              <span className="font-semibold">एडवोकेट श्री गिरिराज मोहता</span><br />
-              <span className="text-sm">राजस्थान हाई कोर्ट-बीकानेर</span>
-            </td>
-            <td className="border border-primary p-2 text-center text-tertiary">चेयरमैन</td>
-          </tr>
-          <tr>
-            <td className="border border-primary p-2 text-center text-tertiary">2</td>
-            <td className="border border-primary p-2 text-tertiary">
-              <span className="font-semibold">डॉ. ब्रजरतन जोशी</span><br />
-              <span className="text-sm">सह-आचार्य, राजकीय श्रीडूंगर महाविद्यालय, बीकानेर</span>
-            </td>
-            <td className="border border-primary p-2 text-center text-tertiary">वाईस चेयरमैन</td>
-          </tr>
-          <tr>
-            <td className="border border-primary p-2 text-center text-tertiary">3</td>
-            <td className="border border-primary p-2 text-tertiary">
-              <span className="font-semibold">डॉ. दीपाली धवन</span><br />
-              <span className="text-sm">डीन, पीजीएस, स्वामी केशवानंद कृषि विश्वविद्यालय, बीकानेर</span>
-            </td>
-            <td className="border border-primary p-2 text-center text-tertiary">सदस्य</td>
-          </tr>
-          <tr>
-            <td className="border border-primary p-2 text-center text-tertiary">4</td>
-            <td className="border border-primary p-2 text-tertiary">
-              <span className="font-semibold">श्रीमती महिमा सांखला</span><br />
-              <span className="text-sm">महिला विकास एवं समाजसेविका, बीकानेर</span>
-            </td>
-            <td className="border border-primary p-2 text-center text-tertiary">सदस्य</td>
-          </tr>
-          <tr>
-            <td className="border border-primary p-2 text-center text-tertiary">5</td>
-            <td className="border border-primary p-2 text-tertiary">
-              <span className="font-semibold">श्री कमल कल्ला</span><br />
-              <span className="text-sm">अध्यक्ष, राजस्थान वूलन इंडस्ट्रीज एसोसिएशन, बीकानेर</span>
-            </td>
-            <td className="border border-primary p-2 text-center text-tertiary">सदस्य</td>
-          </tr>
-          <tr>
-            <td className="border border-primary p-2 text-center text-tertiary">6</td>
-            <td className="border border-primary p-2 text-tertiary">
-              <span className="font-semibold">श्रीमती मोहिनी देवाणी</span><br />
-              <span className="text-sm">प्रख्यात उद्यमी, बीकानेर</span>
-            </td>
-            <td className="border border-primary p-2 text-center text-tertiary">सदस्य</td>
-          </tr>
-          <tr>
-            <td className="border border-primary p-2 text-center text-tertiary">7</td>
-            <td className="border border-primary p-2 text-tertiary">
-              <span className="font-semibold">एडवोकेट भागीरथ राम कालवा</span><br />
-              <span className="text-sm">राजस्थान हाई कोर्ट, बीकानेर</span>
-            </td>
-            <td className="border border-primary p-2 text-center text-tertiary">सदस्य</td>
-          </tr>
-        </tbody>
-      </table>
-
-
-
-      <h3 className="text-xl font-semibold mb-4 mt-8  text-tertiary">प्रबंध मंडल के कार्यालयी सदस्य (OFFICIAL MEMBER):-</h3>
-      <table className="min-w-full border-collapse border border-gray-200 bg-primary-light">
-        <thead>
-          <tr className='bg-primary-dark text-background'>
-            <th className="border border-primary text-center">क्र.</th>
-            <th className="border border-primary ">प्रबंध मंडल के सदस्य महानुभाव</th>
+            <th className="border border-primary ">प्रबंध मंडल के कार्यालयी सदस्य (OFFICIAL MEMBER)</th>
             <th className="border border-primary py-2">पद</th>
           </tr>
         </thead>
@@ -96,7 +145,9 @@ const Board = () => {
               <span className="font-semibold">श्रीमान क्षेत्रीय निदेशक</span><br />
               <span className="text-sm">क्षेत्रीय निदेशालय, कौशल विकास एवं उद्यमिता, जयपुर, राजस्थान सरकार</span>
             </td>
-            <td className="border border-primary p-2 text-center text-tertiary">सदस्य</td>
+            <td className="border border-primary p-2 text-center text-tertiary">
+              <h1 className='font-semibold'>संयुक्त सचिव, </h1>
+               कौशल विकास एवं उद्यमिता मंत्रालय, भारत सरकार के प्रतिनिधि सदस्य</td>
           </tr>
           <tr>
             <td className="border border-primary p-2 text-center text-tertiary">9</td>
@@ -104,7 +155,10 @@ const Board = () => {
               <span className="font-semibold">श्रीमान प्राचार्य</span><br />
               <span className="text-sm">राजकीय औद्योगिक प्रशिक्षण संस्थान (आई. टी. आई), बीकानेर</span>
             </td>
-            <td className="border border-primary p-2 text-center text-tertiary">सदस्य</td>
+            <td className="border border-primary p-2 text-center text-tertiary">
+              <h1 className='font-semibold'>राज्य कौशल विकास प्राधिकरण</h1>
+              प्रभारी के रूप में प्रतिनिधि सदस्य
+            </td>
           </tr>
           <tr>
             <td className="border border-primary p-2 text-center text-tertiary">10</td>
@@ -112,7 +166,9 @@ const Board = () => {
               <span className="font-semibold">श्रीमान वरिष्ठ लेखाधिकारी</span><br />
               <span className="text-sm">जिला परिषद, बीकानेर</span>
             </td>
-            <td className="border border-primary p-2 text-center text-tertiary">सदस्य</td>
+            <td className="border border-primary p-2 text-center text-tertiary">
+              <h1 className='font-semibold'>जिला कलक्टर द्वारा ग्रामीण विकास विभाग से</h1> प्रतिनिधि सदस्य
+              </td>
           </tr>
           <tr>
             <td className="border border-primary p-2 text-center text-tertiary">11</td>
@@ -120,7 +176,10 @@ const Board = () => {
               <span className="font-semibold">श्रीमान सुनील कुमार बोड़ा</span><br />
               <span className="text-sm">अतिरिक्त जिला शिक्षा अधिकारी (सा.), बीकानेर</span>
             </td>
-            <td className="border border-primary p-2 text-center text-tertiary">सदस्य</td>
+            <td className="border border-primary p-2 text-center text-tertiary">
+              <h1 className='font-semibold'>जिला शिक्षा अधिकारी</h1>
+              प्रतिनिधि सदस्य
+            </td>
           </tr>
           <tr>
             <td className="border border-primary p-2 text-center text-tertiary">12</td>
@@ -128,7 +187,9 @@ const Board = () => {
               <span className="font-semibold">श्री भवानी प्रकाश</span><br />
               <span className="text-sm">प्राचार्य, आईटीआई</span>
             </td>
-            <td className="border border-primary p-2 text-center text-tertiary">सदस्य</td>
+            <td className="border border-primary p-2 text-center text-tertiary">
+              <h1 className='font-semibold'>प्राचार्य, आईटीआई/पोलीटेक्निक महाविद्यालय</h1>प्रतिनिधि सदस्य
+            </td>
           </tr>
           <tr>
             <td className="border border-primary p-2 text-center text-tertiary">13</td>
@@ -136,7 +197,9 @@ const Board = () => {
               <span className="font-semibold">श्रीमान लीड बैंक अधिकारी</span><br />
               <span className="text-sm">स्टेट बैंक ऑफ इंडिया, पंधिलक पार्क ब्रांच, बीकानेर</span>
             </td>
-            <td className="border border-primary p-2 text-center text-tertiary">सदस्य</td>
+            <td className="border border-primary p-2 text-center text-tertiary">
+              <h1 className='font-semibold'>लीड बैंक सदस्य</h1>
+            </td>
           </tr>
           <tr>
             <td className="border border-primary p-2 text-center text-tertiary">14</td>
@@ -144,15 +207,21 @@ const Board = () => {
               <span className="font-semibold">श्री अतुल कुमार शर्मा</span><br />
               <span className="text-sm">सहायक निदेशक, जिला उद्योग एवं वाणिज्य केन्द्र, बीकानेर</span>
             </td>
-            <td className="border border-primary p-2 text-center text-tertiary">सदस्य</td>
+            <td className="border border-primary p-2 text-center text-tertiary">
+              <h1 className='font-semibold'>जिला उद्योग केन्द्र, बीकानेर</h1>
+              से प्रतिनिधि सदस्य
+            </td>
           </tr>
           <tr>
             <td className="border border-primary p-2 text-center text-tertiary">15</td>
             <td className="border border-primary p-2 text-tertiary">
-              <span className="font-semibold">ई. सपस गुर्जर</span><br />
+              <span className="font-semibold">डॉ. सपना गुर्जर</span><br />
               <span className="text-sm">व्याख्याता, कालिका माध्यमिक विद्यालय, जस्सूरम गेट बीकानेर</span>
             </td>
-            <td className="border border-primary p-2 text-center text-tertiary">सदस्य</td>
+            <td className="border border-primary p-2 text-center text-tertiary">
+              <h1 className='font-semibold'>महिला प्रधानाध्यापिका, </h1>
+              राजकीय बालिका उच्च माध्यमिक विद्यालय अथवा उनके प्रतिनिधि सदस्य
+            </td>
           </tr>
           <tr>
             <td className="border border-primary p-2 text-center text-tertiary">16</td>
@@ -160,7 +229,9 @@ const Board = () => {
               <span className="font-semibold">श्री ओम प्रकाश सुधार</span><br />
               <span className="text-sm">निदेशक मन, जिला उद्योग केन्द्र, बीकानेर</span>
             </td>
-            <td className="border border-primary p-2 text-center text-tertiary">सदस्य</td>
+            <td className="border border-primary p-2 text-center text-tertiary">
+              सदस्य सचिव
+            </td>
           </tr>
         </tbody>
       </table>

@@ -9,9 +9,6 @@ export default function Stories() {
         <p className='text-lg'>
           उन कहानियों के संग्रह में गोताखोरी करें जो अनुभवों और उपलब्धियों का जश्न मनाती हैं।
         </p>
-        {/* <button className='mt-4 bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600'>
-          और पढ़ें
-        </button> */}
       </div>
     </div>
   );

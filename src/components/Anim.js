@@ -1,20 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
-import img1 from '../images/img1.jpg';
+import { useEffect, useRef, useState } from 'react';
 import img2 from '../images/img2.jpg';
-import img3 from '../images/img3.jpg';
-import img4 from '../images/img4.jpg';
 import img5 from '../images/img5.jpg';
-import img6 from '../images/img6.jpg';
-// import img7 from '../images/img7.jpg';
-// import img8 from '../images/img8.jpg';
-// import img9 from '../images/img9.jpg';
-// import img10 from '../images/img10.jpg';
-// import img11 from '../images/img11.jpg';
-// import img12 from '../images/img12.jpg';
-// import img13 from '../images/img13.jpg';
-// import img14 from '../images/img14.jpg';
-// import img15 from '../images/img15.jpg';
-// import img16 from '../images/img16.jpg';
+import img18 from '../images/img18.jpeg';
+import img50 from '../images/img50.jpeg';
+import { IoIosArrowBack , IoIosArrowForward } from "react-icons/io";
 
 function Anim() {
   const containerRef = useRef(null);
@@ -23,7 +12,7 @@ function Anim() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
-  const images = [img1, img2, img3, img4, img5, img6];
+  const images = [img2, img5, img18, img50];
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -101,7 +90,7 @@ function Anim() {
 
   return (
     <div className="relative w-full my-10">
-      <div className="relative w-full h-64 sm:h-96 overflow-hidden rounded-lg">
+      <div className="relative w-full h-72 sm:h-96 overflow-hidden rounded-lg">
         <div 
           ref={containerRef}
           className="flex transition-transform duration-500 ease-in-out h-full"
@@ -117,18 +106,18 @@ function Anim() {
                 key={index}
                 src={image}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover flex-shrink-0 rounded-lg"
+                className="w-full h-full object-cover object-top flex-shrink-0 rounded-lg"
               />
             ))
           ) : (
             Array.from({ length: Math.ceil(images.length / 2) }, (_, groupIndex) => (
-              <div key={groupIndex} className="w-full h-full flex flex-shrink-0 gap-8 px-10">
+              <div key={groupIndex} className="w-full h-full flex flex-shrink-0 gap-4 px-10">
                 {images.slice(groupIndex * 2, groupIndex * 2 + 2).map((image, index) => (
                   <img
                     key={groupIndex * 2 + index}
                     src={image}
                     alt={`Slide ${groupIndex * 2 + index + 1}`}
-                    className="w-1/2 h-full object-cover rounded-lg"
+                    className="w-1/2 h-full object-cover object-top rounded-xl border-2 border-primary"
                   />
                 ))}
                 {images.slice(groupIndex * 2, groupIndex * 2 + 2).length === 1 && (
@@ -143,20 +132,16 @@ function Anim() {
 
         <button 
           onClick={prevImage}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-tertiary bg-opacity-50 text-surface p-3 rounded-full hover:bg-opacity-75 transition-all duration-300"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-primary border-l-2 border-b-2 border-tertiary text-tertiary px-0 py-2 ml-1 text-3xl rounded-md hover:bg-opacity-75 transition-all duration-300"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
+          <IoIosArrowBack />
         </button>
 
         <button 
           onClick={nextImage}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-tertiary bg-opacity-50 text-surface p-3 rounded-full hover:bg-opacity-75 transition-all duration-300"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-primary border-r-2 border-b-2 border-tertiary text-tertiary px-0 py-2 mr-1 text-3xl rounded-md hover:bg-opacity-75 transition-all duration-300"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
+          <IoIosArrowForward />
         </button>
       </div>
 
@@ -184,16 +169,6 @@ function Anim() {
             />
           );
         })}
-      </div>
-
-      <div className="text-center mt-4">
-        <span className="text-tertiary text-sm">
-          {isMobile ? (
-            `${currentIndex + 1} / ${images.length}`
-          ) : (
-            `${Math.floor(currentIndex / 2) * 2 + 1}-${Math.min(Math.floor(currentIndex / 2) * 2 + 2, images.length)} / ${images.length}`
-          )}
-        </span>
       </div>
     </div>
   );
