@@ -185,7 +185,7 @@ const tableData = [
         </h3>
         <ul className="list-disc list-inside space-y-2 text-justify">
           <li>
-            स्किल पोर्टल एंव (Skill India Digitel Hub) के माध्यम से इच्छुक प्रशिक्षणार्थियों का पंजीकरण।
+            स्किल पोर्टल एंव (Skill India Digital Hub) के माध्यम से इच्छुक प्रशिक्षणार्थियों का पंजीकरण।
           </li>
           <li>संपर्क व्यक्ति (अनुदेशक) की पहचान।</li>
           <li>लक्ष्य समूह के अनुसार प्रशिक्षण प्राप्त के इच्छुक 20 संभावियों का सर्वे।</li>
