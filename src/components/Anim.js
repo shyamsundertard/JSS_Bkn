@@ -106,7 +106,7 @@ function Anim() {
                 key={index}
                 src={image}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover object-top flex-shrink-0 rounded-lg"
+                className="w-full h-full px-1 object-cover object-top flex-shrink-0 rounded-lg"
               />
             ))
           ) : (
