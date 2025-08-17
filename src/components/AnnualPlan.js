@@ -94,7 +94,7 @@ const tableData = [
     ["16", "Handcraft & Carpets", "Creative Soft Toy Maker Advance", "120", "40", "4", "20", "80", "300", "12000", "48000", "3500", "14000", "15500", "62000", "775"],
     ["17", "Capital Goods & Manufacturing", "Assistant Welder & Fabricator", "240", "80", "2", "20", "40", "380", "30400", "60800", "3200", "6400", "33600", "67200", "1680"],
     ["18", "Automotive", "Helper Two/Three Wheelers", "240", "80", "1", "20", "20", "380", "30400", "30400", "3200", "3200", "33600", "33600", "1680"],
-    ["Total", "", "", "", "", "90", "", "1800", "", "", "1728000", "", "378800", "", "2100000", ""],
+    ["Total", "", "", "", "", "90", "", "1800", "", "372800", "1728000", "", "372000", "", "2100000", ""],
     ["", "", "", "", "", "", { text: "Budget for Skill Training Program", colSpan: 8 }, "2100000", ""],
     ["", "", "", "", "", "", { text: "Budget for Capacity Building program with RP and JSS Staff", colSpan: 8 }, "72000 (3%)", ""],
     ["", "", "", "", "", "", { text: "Budget for Action", colSpan: 8 }, "72000 (3%)", ""],
@@ -105,7 +105,7 @@ const tableData = [
   return (
     <div style={styles.container}>
       <h1 style={styles.header} className="font-bold text-tertiary">JAN SHIKSHAN SANSTHAN, BIKANER (RAJ)</h1>
-      <h2 style={styles.subHeader} className="text-tertiary">ANNUAL ACTION PLAN 2020-21</h2>
+      <h2 style={styles.subHeader} className="text-tertiary font-semibold">ANNUAL ACTION PLAN 2025-26</h2>
 
       <div style={styles.tableContainer}>
         <table style={styles.responsiveTable} className="bg-primary-light border-collapse border border-primary rounded-sm">
@@ -136,74 +136,6 @@ const tableData = [
           </tbody>
         </table>
       </div>
-      
-
-      <div className="flex-grow md:mx-32 md:my-10 m-5">
-      <h2 className="text-2xl font-semibold text-center mb-6">
-        संस्थान द्वारा संचालित व्यावसायिक कौशल प्रशिक्षण
-      </h2>
-
-      {/* Table */}
-      <div className="overflow-x-auto rounded-sm">
-        <table className="table-auto border border-primary bg-primary-light w-full text-sm md:text-base">
-          <thead className="bg-primary-dark text-background">
-            <tr>
-              <th className="border border-primary px-2 py-2">क्र. सं.</th>
-              <th className="border border-primary px-2 py-2">प्रशिक्षण का नाम</th>
-              <th className="border border-primary px-2 py-2">अवधि दिन/सत्र</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              ["असिस्टेंट हैंड एम्ब्रॉयडर – हाथ की कढ़ाई", "105/80"],
-              ["असिस्टेंट ड्रैस मेकर – सिलाई", "105/80"],
-              ["ब्यूटी केयर असिस्टेंट – ब्यूटीशियन प्रशिक्षण", "105/80"],
-              ["असिस्टेंट वेल्डर एंड फेब्रीकेटर – वेल्डिंग कार्य प्रशिक्षण", "105/80"],
-              ["हेल्पर – इलेक्ट्रिकल टेक्नीशियन – इलेक्ट्रिक कार्य प्रशिक्षण", "105/80"],
-              ["असिस्टेंट फूड एंड बेवरेज प्रोसेसिंग एंड प्रिजर्वेशन – कुकिंग प्रशिक्षण", "75/60"],
-              ["टेलर मैन प्रशिक्षण", "55/45"],
-              ["असिस्टेंट जूट कैम्पर – जूट कार्य प्रशिक्षण", "105/80"],
-              ["असिस्टेंट कम्प्यूटर ऑपरेटर – कम्प्यूटर प्रशिक्षण", "150/120"],
-              ["असिस्टेंट टेक्सटाइल प्रिंटर – टाई एंड डाई, स्क्रीन, ब्लॉक प्रिंटिंग", "105/80"],
-              ["असिस्टेंट फर्नीचर एस्टेब्लिशर – जूटी निर्माण प्रशिक्षण", "115/90"],
-              ["हेल्पर दु/श्री खादी", "105/87"],
-            ].map(([name, duration], i) => (
-              <tr key={i}>
-                <td className="border border-primary px-2 py-1 text-center font-semibold">{i + 1}.</td>
-                <td className="border border-primary px-2 py-1 font-semibold">{name}</td>
-                <td className="border border-primary px-2 py-1 text-center">{duration}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      {/* Section: प्रक्रियाएं और आवश्यक कार्य */}
-      <div className="mt-10 border-l-4 border-b-4 border-primary bg-primary-light rounded-lg p-2">
-        <h3 className="text-lg font-semibold mb-4 text-center">
-          - कौशल प्रशिक्षण केन्द्र संचालन के लिए प्रक्रियाएं और केन्द्र संचालन संबंधी आवश्यक कार्य -
-        </h3>
-        <ul className="list-disc list-inside space-y-2 text-justify">
-          <li>
-            स्किल पोर्टल एंव (Skill India Digital Hub) के माध्यम से इच्छुक प्रशिक्षणार्थियों का पंजीकरण।
-          </li>
-          <li>संपर्क व्यक्ति (अनुदेशक) की पहचान।</li>
-          <li>लक्ष्य समूह के अनुसार प्रशिक्षण प्राप्त के इच्छुक 20 संभावियों का सर्वे।</li>
-          <li>कौशल प्रशिक्षण हेतु स्थान का चयन।</li>
-          <li>संपर्क व्यक्ति एवं संभावियों के साथ प्रारंभिक बैठक।</li>
-          <li>केंद्र संचालन हेतु निर्धारित प्रारंभ शुल्क जमा करवाना।</li>
-          <li>निश्चित समय एवं तिथि से केंद्र का प्रारंभ करना।</li>
-          <li>केंद्र का पर्यवेक्षण, कार्यक्रमों की समीक्षा एवं नियोजन।</li>
-          <li>प्रशिक्षणार्थियों का कार्यक्रमों का मूल्यांकन।</li>
-          <li>स्वयं सहायता समूह का गठन।</li>
-          <li>प्रमाण-पत्र वितरण एवं अनुश्रवण कार्य।</li>
-          <li>
-            प्रशिक्षण स्थापना के लिए विभिन्न ऋण योजनाओं की जानकारी देकर सफलता की कहानियों के रूप में
-            प्रशिक्षणार्थियों का स्वरोजगार/रोजगार से जुड़कर आत्मनिर्भर बनाना।
-          </li>
-        </ul>
-      </div>
-    </div>
     </div>
   );
 };
